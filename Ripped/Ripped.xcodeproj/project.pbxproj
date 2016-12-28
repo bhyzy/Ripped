@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C02672D1E140EF9001901F7 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02672C1E140EF9001901F7 /* Program.swift */; };
+		8C0267311E141001001901F7 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267301E141001001901F7 /* Day.swift */; };
+		8C0267331E141015001901F7 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267321E141015001901F7 /* Week.swift */; };
+		8C0267351E1410D1001901F7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267341E1410D1001901F7 /* Exercise.swift */; };
+		8C0267371E141198001901F7 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267361E141198001901F7 /* Set.swift */; };
 		8C2A31A21E1409BD000C109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A31A11E1409BD000C109F /* AppDelegate.swift */; };
 		8C2A31A91E1409BE000C109F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31A81E1409BE000C109F /* Assets.xcassets */; };
 		8C2A31AC1E1409BE000C109F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31AA1E1409BE000C109F /* LaunchScreen.storyboard */; };
@@ -34,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C02672C1E140EF9001901F7 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Program.swift; path = Data/Program.swift; sourceTree = "<group>"; };
+		8C0267301E141001001901F7 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Data/Day.swift; sourceTree = "<group>"; };
+		8C0267321E141015001901F7 /* Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Week.swift; path = Data/Week.swift; sourceTree = "<group>"; };
+		8C0267341E1410D1001901F7 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Data/Exercise.swift; sourceTree = "<group>"; };
+		8C0267361E141198001901F7 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Set.swift; path = Data/Set.swift; sourceTree = "<group>"; };
 		8C2A319E1E1409BD000C109F /* Ripped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ripped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2A31A11E1409BD000C109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C2A31A81E1409BE000C109F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +93,18 @@
 			name = "Program List";
 			sourceTree = "<group>";
 		};
+		8C02672B1E140ECB001901F7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8C02672C1E140EF9001901F7 /* Program.swift */,
+				8C0267321E141015001901F7 /* Week.swift */,
+				8C0267301E141001001901F7 /* Day.swift */,
+				8C0267341E1410D1001901F7 /* Exercise.swift */,
+				8C0267361E141198001901F7 /* Set.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		8C2A31951E1409BD000C109F = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +128,7 @@
 		8C2A31A01E1409BD000C109F /* Ripped */ = {
 			isa = PBXGroup;
 			children = (
+				8C02672B1E140ECB001901F7 /* Data */,
 				8C2A31CF1E140AA1000C109F /* Screens */,
 				8C2A31A11E1409BD000C109F /* AppDelegate.swift */,
 				8C2A31A81E1409BE000C109F /* Assets.xcassets */,
@@ -280,6 +303,11 @@
 			files = (
 				8C2A31A21E1409BD000C109F /* AppDelegate.swift in Sources */,
 				8C2A31D21E140B32000C109F /* ProgramListViewController.swift in Sources */,
+				8C0267331E141015001901F7 /* Week.swift in Sources */,
+				8C0267371E141198001901F7 /* Set.swift in Sources */,
+				8C0267311E141001001901F7 /* Day.swift in Sources */,
+				8C02672D1E140EF9001901F7 /* Program.swift in Sources */,
+				8C0267351E1410D1001901F7 /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
