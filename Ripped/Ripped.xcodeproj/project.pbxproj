@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8C2A31A21E1409BD000C109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A31A11E1409BD000C109F /* AppDelegate.swift */; };
-		8C2A31A41E1409BD000C109F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A31A31E1409BD000C109F /* ViewController.swift */; };
-		8C2A31A71E1409BE000C109F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31A51E1409BE000C109F /* Main.storyboard */; };
 		8C2A31A91E1409BE000C109F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31A81E1409BE000C109F /* Assets.xcassets */; };
 		8C2A31AC1E1409BE000C109F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31AA1E1409BE000C109F /* LaunchScreen.storyboard */; };
 		8C2A31B71E1409BE000C109F /* RippedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A31B61E1409BE000C109F /* RippedTests.swift */; };
 		8C2A31C21E1409BE000C109F /* RippedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A31C11E1409BE000C109F /* RippedUITests.swift */; };
+		8C2A31D21E140B32000C109F /* ProgramListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A31D01E140B32000C109F /* ProgramListViewController.swift */; };
+		8C2A31D31E140B32000C109F /* ProgramListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31D11E140B32000C109F /* ProgramListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,6 @@
 /* Begin PBXFileReference section */
 		8C2A319E1E1409BD000C109F /* Ripped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ripped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2A31A11E1409BD000C109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C2A31A31E1409BD000C109F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8C2A31A61E1409BE000C109F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C2A31A81E1409BE000C109F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C2A31AB1E1409BE000C109F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C2A31AD1E1409BE000C109F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +45,8 @@
 		8C2A31BD1E1409BE000C109F /* RippedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RippedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2A31C11E1409BE000C109F /* RippedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippedUITests.swift; sourceTree = "<group>"; };
 		8C2A31C31E1409BE000C109F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C2A31D01E140B32000C109F /* ProgramListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgramListViewController.swift; path = Screens/ProgramListViewController.swift; sourceTree = "<group>"; };
+		8C2A31D11E140B32000C109F /* ProgramListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgramListViewController.xib; path = Screens/ProgramListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C02672A1E140E09001901F7 /* Program List */ = {
+			isa = PBXGroup;
+			children = (
+				8C2A31D01E140B32000C109F /* ProgramListViewController.swift */,
+				8C2A31D11E140B32000C109F /* ProgramListViewController.xib */,
+			);
+			name = "Program List";
+			sourceTree = "<group>";
+		};
 		8C2A31951E1409BD000C109F = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +106,8 @@
 		8C2A31A01E1409BD000C109F /* Ripped */ = {
 			isa = PBXGroup;
 			children = (
+				8C2A31CF1E140AA1000C109F /* Screens */,
 				8C2A31A11E1409BD000C109F /* AppDelegate.swift */,
-				8C2A31A31E1409BD000C109F /* ViewController.swift */,
-				8C2A31A51E1409BE000C109F /* Main.storyboard */,
 				8C2A31A81E1409BE000C109F /* Assets.xcassets */,
 				8C2A31AA1E1409BE000C109F /* LaunchScreen.storyboard */,
 				8C2A31AD1E1409BE000C109F /* Info.plist */,
@@ -123,6 +131,14 @@
 				8C2A31C31E1409BE000C109F /* Info.plist */,
 			);
 			path = RippedUITests;
+			sourceTree = "<group>";
+		};
+		8C2A31CF1E140AA1000C109F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8C02672A1E140E09001901F7 /* Program List */,
+			);
+			name = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +252,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C2A31AC1E1409BE000C109F /* LaunchScreen.storyboard in Resources */,
+				8C2A31D31E140B32000C109F /* ProgramListViewController.xib in Resources */,
 				8C2A31A91E1409BE000C109F /* Assets.xcassets in Resources */,
-				8C2A31A71E1409BE000C109F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +278,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C2A31A41E1409BD000C109F /* ViewController.swift in Sources */,
 				8C2A31A21E1409BD000C109F /* AppDelegate.swift in Sources */,
+				8C2A31D21E140B32000C109F /* ProgramListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +315,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8C2A31A51E1409BE000C109F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C2A31A61E1409BE000C109F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8C2A31AA1E1409BE000C109F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -512,6 +520,7 @@
 				8C2A31C81E1409BE000C109F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C2A31C91E1409BE000C109F /* Build configuration list for PBXNativeTarget "RippedTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +529,7 @@
 				8C2A31CB1E1409BE000C109F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C2A31CC1E1409BE000C109F /* Build configuration list for PBXNativeTarget "RippedUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +538,7 @@
 				8C2A31CE1E1409BE000C109F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
