@@ -16,6 +16,9 @@
 		8C02673D1E1416E4001901F7 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02673C1E1416E4001901F7 /* MockDataProvider.swift */; };
 		8C02673F1E152896001901F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C02673E1E152896001901F7 /* Main.storyboard */; };
 		8C0267431E152903001901F7 /* ProgramListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267421E152903001901F7 /* ProgramListViewController.swift */; };
+		8C0267471E152F13001901F7 /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267461E152F13001901F7 /* ProgramViewController.swift */; };
+		8C02674B1E153CB4001901F7 /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02674A1E153CB4001901F7 /* WeekViewController.swift */; };
+		8C02674E1E153F44001901F7 /* CellTitleProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02674D1E153F44001901F7 /* CellTitleProviding.swift */; };
 		8C2A31A21E1409BD000C109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A31A11E1409BD000C109F /* AppDelegate.swift */; };
 		8C2A31A91E1409BE000C109F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31A81E1409BE000C109F /* Assets.xcassets */; };
 		8C2A31AC1E1409BE000C109F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31AA1E1409BE000C109F /* LaunchScreen.storyboard */; };
@@ -50,6 +53,9 @@
 		8C02673C1E1416E4001901F7 /* MockDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockDataProvider.swift; path = Data/MockDataProvider.swift; sourceTree = "<group>"; };
 		8C02673E1E152896001901F7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Screens/Main.storyboard; sourceTree = "<group>"; };
 		8C0267421E152903001901F7 /* ProgramListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgramListViewController.swift; path = UI/ProgramListViewController.swift; sourceTree = "<group>"; };
+		8C0267461E152F13001901F7 /* ProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgramViewController.swift; path = UI/ProgramViewController.swift; sourceTree = "<group>"; };
+		8C02674A1E153CB4001901F7 /* WeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekViewController.swift; path = UI/WeekViewController.swift; sourceTree = "<group>"; };
+		8C02674D1E153F44001901F7 /* CellTitleProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellTitleProviding.swift; path = Protocols/CellTitleProviding.swift; sourceTree = "<group>"; };
 		8C2A319E1E1409BD000C109F /* Ripped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ripped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2A31A11E1409BD000C109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C2A31A81E1409BE000C109F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +116,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		8C02674C1E153F25001901F7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8C02674D1E153F44001901F7 /* CellTitleProviding.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		8C2A31951E1409BD000C109F = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +147,7 @@
 		8C2A31A01E1409BD000C109F /* Ripped */ = {
 			isa = PBXGroup;
 			children = (
+				8C02674C1E153F25001901F7 /* Protocols */,
 				8C02672B1E140ECB001901F7 /* Data */,
 				8C2A31CF1E140AA1000C109F /* UI */,
 				8C2A31A11E1409BD000C109F /* AppDelegate.swift */,
@@ -166,6 +181,8 @@
 			children = (
 				8C02673E1E152896001901F7 /* Main.storyboard */,
 				8C0267421E152903001901F7 /* ProgramListViewController.swift */,
+				8C0267461E152F13001901F7 /* ProgramViewController.swift */,
+				8C02674A1E153CB4001901F7 /* WeekViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -314,7 +331,10 @@
 				8C0267371E141198001901F7 /* Set.swift in Sources */,
 				8C0267311E141001001901F7 /* Day.swift in Sources */,
 				8C02672D1E140EF9001901F7 /* Program.swift in Sources */,
+				8C02674E1E153F44001901F7 /* CellTitleProviding.swift in Sources */,
+				8C0267471E152F13001901F7 /* ProgramViewController.swift in Sources */,
 				8C02673D1E1416E4001901F7 /* MockDataProvider.swift in Sources */,
+				8C02674B1E153CB4001901F7 /* WeekViewController.swift in Sources */,
 				8C0267351E1410D1001901F7 /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

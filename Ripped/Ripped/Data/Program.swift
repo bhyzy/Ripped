@@ -13,3 +13,9 @@ struct Program {
     let completed: Bool
     let weeks: [Week]
 }
+
+extension Program: CellTitleProviding {
+    var cellTitle: String {
+        return name + (completed ? " ✓" : "")
+    }
+}

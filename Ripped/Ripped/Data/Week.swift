@@ -13,3 +13,15 @@ struct Week {
     let completed: Bool
     let days: [Day]
 }
+
+extension Week {
+    var name: String {
+        return "Week \(number)"
+    }
+}
+
+extension Week: CellTitleProviding {
+    var cellTitle: String {
+        return name + (completed ? " ✓" : "")
+    }
+}

@@ -1,5 +1,5 @@
 //
-//  ProgramListViewController.swift
+//  ProgramViewController.swift
 //  Ripped
 //
 //  Created by Bartlomiej Hyzy on 12/29/16.
@@ -8,33 +8,41 @@
 
 import UIKit
 
-class ProgramListViewController: UITableViewController {
+class ProgramViewController: UITableViewController {
     
-    var dataProvider: DataProviding!
+    var program: Program!
+    
+    // MARK: - View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = program.name
+    }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataProvider.programs.count
+        return program.weeks.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProgramCell", for: indexPath)
-        
-        let program = dataProvider.programs[indexPath.row]
-        cell.textLabel?.text = program.cellTitle
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeekCell", for: indexPath)
+
+        let week = program.weeks[indexPath.row]
+        cell.textLabel?.text = week.cellTitle
+
         return cell
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let programVC = segue.destination as? ProgramViewController {
+        if let weekVC = segue.destination as? WeekViewController {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                programVC.program = dataProvider.programs[selectedIndexPath.row]
+                weekVC.week = program.weeks[selectedIndexPath.row]
             }
         }
     }
- 
+
 }

@@ -10,7 +10,20 @@ import Foundation
 
 struct Day {
     let number: Int
-    let name: String?
+    let targetParts: String?
     let completionDate: Date?
     let exercises: [Exercise]
 }
+
+extension Day {
+    var name: String {
+        return "Day \(number)"
+    }
+}
+
+extension Day: CellTitleProviding {
+    var cellTitle: String {
+        return name + (completionDate != nil ? " ✓" : "")
+    }
+}
+
