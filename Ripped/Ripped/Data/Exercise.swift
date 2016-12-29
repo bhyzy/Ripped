@@ -12,6 +12,6 @@ struct Exercise {
     let name: String
     let needsWarmup: Bool
     let numberOfWorkingSets: Int
+    let comment: String?
     let sets: [Set]
-    let comment: String
 }

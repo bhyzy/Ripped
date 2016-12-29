@@ -1,5 +1,5 @@
 //
-//  Day.swift
+//  DataProviding.swift
 //  Ripped
 //
 //  Created by Bartlomiej Hyzy on 12/28/16.
@@ -8,9 +8,6 @@
 
 import Foundation
 
-struct Day {
-    let number: Int
-    let name: String?
-    let completionDate: Date?
-    let exercises: [Exercise]
+protocol DataProviding {
+    var programs: [Program] { get }
 }

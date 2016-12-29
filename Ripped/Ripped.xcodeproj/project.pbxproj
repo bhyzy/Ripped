@@ -12,6 +12,8 @@
 		8C0267331E141015001901F7 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267321E141015001901F7 /* Week.swift */; };
 		8C0267351E1410D1001901F7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267341E1410D1001901F7 /* Exercise.swift */; };
 		8C0267371E141198001901F7 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267361E141198001901F7 /* Set.swift */; };
+		8C02673B1E141687001901F7 /* DataProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02673A1E141687001901F7 /* DataProviding.swift */; };
+		8C02673D1E1416E4001901F7 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02673C1E1416E4001901F7 /* MockDataProvider.swift */; };
 		8C2A31A21E1409BD000C109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A31A11E1409BD000C109F /* AppDelegate.swift */; };
 		8C2A31A91E1409BE000C109F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31A81E1409BE000C109F /* Assets.xcassets */; };
 		8C2A31AC1E1409BE000C109F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31AA1E1409BE000C109F /* LaunchScreen.storyboard */; };
@@ -44,6 +46,8 @@
 		8C0267321E141015001901F7 /* Week.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Week.swift; path = Data/Week.swift; sourceTree = "<group>"; };
 		8C0267341E1410D1001901F7 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Data/Exercise.swift; sourceTree = "<group>"; };
 		8C0267361E141198001901F7 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Set.swift; path = Data/Set.swift; sourceTree = "<group>"; };
+		8C02673A1E141687001901F7 /* DataProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProviding.swift; path = Data/DataProviding.swift; sourceTree = "<group>"; };
+		8C02673C1E1416E4001901F7 /* MockDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockDataProvider.swift; path = Data/MockDataProvider.swift; sourceTree = "<group>"; };
 		8C2A319E1E1409BD000C109F /* Ripped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ripped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2A31A11E1409BD000C109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C2A31A81E1409BE000C109F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,13 +100,23 @@
 		8C02672B1E140ECB001901F7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8C0267391E141672001901F7 /* Models */,
+				8C02673A1E141687001901F7 /* DataProviding.swift */,
+				8C02673C1E1416E4001901F7 /* MockDataProvider.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		8C0267391E141672001901F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				8C02672C1E140EF9001901F7 /* Program.swift */,
 				8C0267321E141015001901F7 /* Week.swift */,
 				8C0267301E141001001901F7 /* Day.swift */,
 				8C0267341E1410D1001901F7 /* Exercise.swift */,
 				8C0267361E141198001901F7 /* Set.swift */,
 			);
-			name = Data;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		8C2A31951E1409BD000C109F = {
@@ -303,10 +317,12 @@
 			files = (
 				8C2A31A21E1409BD000C109F /* AppDelegate.swift in Sources */,
 				8C2A31D21E140B32000C109F /* ProgramListViewController.swift in Sources */,
+				8C02673B1E141687001901F7 /* DataProviding.swift in Sources */,
 				8C0267331E141015001901F7 /* Week.swift in Sources */,
 				8C0267371E141198001901F7 /* Set.swift in Sources */,
 				8C0267311E141001001901F7 /* Day.swift in Sources */,
 				8C02672D1E140EF9001901F7 /* Program.swift in Sources */,
+				8C02673D1E1416E4001901F7 /* MockDataProvider.swift in Sources */,
 				8C0267351E1410D1001901F7 /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
