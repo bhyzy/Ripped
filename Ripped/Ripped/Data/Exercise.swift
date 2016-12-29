@@ -15,3 +15,9 @@ struct Exercise {
     let comment: String?
     let sets: [Set]
 }
+
+extension Exercise {
+    var goal: String {
+        return (needsWarmup ? "WA + " : "") + "\(numberOfWorkingSets)WS"
+    }
+}

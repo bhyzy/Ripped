@@ -36,5 +36,15 @@ class WeekViewController: UITableViewController {
         
         return cell
     }
-
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dayVC = segue.destination as? DayViewController {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                dayVC.day = week.days[selectedIndexPath.row]
+            }
+        }
+    }
+    
 }

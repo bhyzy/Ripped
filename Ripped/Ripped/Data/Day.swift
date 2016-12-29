@@ -19,6 +19,9 @@ extension Day {
     var name: String {
         return "Day \(number)"
     }
+    var fullName: String {
+        return name + (targetParts != nil ? ": \(targetParts!)" : "")
+    }
 }
 
 extension Day: CellTitleProviding {

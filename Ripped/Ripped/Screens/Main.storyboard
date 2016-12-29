@@ -122,6 +122,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TSK-az-g4G" kind="show" id="Jrx-jd-RDJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -133,6 +136,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDi-Hp-d74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2166" y="90"/>
+        </scene>
+        <!--Day-->
+        <scene sceneID="yGT-rB-Y6S">
+            <objects>
+                <tableViewController title="Day" id="TSK-az-g4G" customClass="DayViewController" customModule="Ripped" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="286" sectionHeaderHeight="28" sectionFooterHeight="28" id="iL1-Fi-CUI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExerciseCell" rowHeight="286" id="lTc-jc-C5Q" customClass="ExerciseTableViewCell" customModule="Ripped" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="286"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lTc-jc-C5Q" id="A7m-6C-0dq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="285"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK7-vc-1ec">
+                                            <rect key="frame" x="10" y="10" width="355" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRB-jH-c7k">
+                                            <rect key="frame" x="10" y="35.5" width="355" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jlf-0C-biJ">
+                                            <rect key="frame" x="10" y="60" width="355" height="170"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="170" id="gUo-QZ-AMm"/>
+                                            </constraints>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxm-QV-Z9B">
+                                            <rect key="frame" x="10" y="250" width="72" height="30"/>
+                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Add round"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Jlf-0C-biJ" firstAttribute="top" secondItem="YRB-jH-c7k" secondAttribute="bottom" constant="10" id="Fp0-7H-RwX"/>
+                                        <constraint firstItem="YRB-jH-c7k" firstAttribute="leading" secondItem="sK7-vc-1ec" secondAttribute="leading" id="H0e-15-hqF"/>
+                                        <constraint firstAttribute="trailing" secondItem="sK7-vc-1ec" secondAttribute="trailing" constant="10" id="JQf-VR-c5k"/>
+                                        <constraint firstItem="Jlf-0C-biJ" firstAttribute="leading" secondItem="sK7-vc-1ec" secondAttribute="leading" id="LeN-V7-sCr"/>
+                                        <constraint firstItem="yxm-QV-Z9B" firstAttribute="top" secondItem="Jlf-0C-biJ" secondAttribute="bottom" constant="20" id="Qp6-vN-TN4"/>
+                                        <constraint firstItem="yxm-QV-Z9B" firstAttribute="leading" secondItem="Jlf-0C-biJ" secondAttribute="leading" id="TTU-fC-c0m"/>
+                                        <constraint firstItem="YRB-jH-c7k" firstAttribute="trailing" secondItem="sK7-vc-1ec" secondAttribute="trailing" id="ZHD-K3-7rz"/>
+                                        <constraint firstItem="sK7-vc-1ec" firstAttribute="leading" secondItem="A7m-6C-0dq" secondAttribute="leading" constant="10" id="Zgf-qU-313"/>
+                                        <constraint firstItem="YRB-jH-c7k" firstAttribute="top" secondItem="sK7-vc-1ec" secondAttribute="bottom" constant="5" id="agD-Rw-CMo"/>
+                                        <constraint firstItem="Jlf-0C-biJ" firstAttribute="trailing" secondItem="sK7-vc-1ec" secondAttribute="trailing" id="aiH-tR-b0i"/>
+                                        <constraint firstItem="sK7-vc-1ec" firstAttribute="top" secondItem="A7m-6C-0dq" secondAttribute="top" constant="10" id="b8e-Zz-CeW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="goalLabel" destination="YRB-jH-c7k" id="5wU-es-u7k"/>
+                                    <outlet property="nameLabel" destination="sK7-vc-1ec" id="od3-C5-sp6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TSK-az-g4G" id="ssK-B5-E1r"/>
+                            <outlet property="delegate" destination="TSK-az-g4G" id="QuN-mh-Nf8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrI-kn-Mbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3020" y="89.505247376311857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vea-lW-q0L">
