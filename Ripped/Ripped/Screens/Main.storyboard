@@ -154,26 +154,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK7-vc-1ec">
-                                            <rect key="frame" x="10" y="10" width="355" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="10" y="10" width="355" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRB-jH-c7k">
-                                            <rect key="frame" x="10" y="35.5" width="355" height="14.5"/>
+                                            <rect key="frame" x="10" y="36" width="355" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jlf-0C-biJ">
-                                            <rect key="frame" x="10" y="60" width="355" height="170"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jlf-0C-biJ">
+                                            <rect key="frame" x="10" y="61" width="355" height="170"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="170" id="gUo-QZ-AMm"/>
                                             </constraints>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxm-QV-Z9B">
-                                            <rect key="frame" x="10" y="250" width="72" height="30"/>
+                                            <rect key="frame" x="10" y="251" width="72" height="30"/>
                                             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" title="Add round"/>
                                         </button>
@@ -195,6 +195,7 @@
                                 <connections>
                                     <outlet property="goalLabel" destination="YRB-jH-c7k" id="5wU-es-u7k"/>
                                     <outlet property="nameLabel" destination="sK7-vc-1ec" id="od3-C5-sp6"/>
+                                    <outlet property="resultsStackView" destination="Jlf-0C-biJ" id="epF-c0-gNB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

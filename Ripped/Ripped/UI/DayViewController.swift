@@ -32,6 +32,17 @@ class DayViewController: UITableViewController {
         let exercise = day.exercises[indexPath.row]
         cell.nameLabel.text = exercise.name
         cell.goalLabel.text = exercise.goal
+        
+        let lastResultsView = Bundle.main.loadNibNamed("ExerciseResultsView", owner: self, options: nil)?.first as! ExerciseResultsView
+        lastResultsView.titleLabel.text = "Last Time"
+        lastResultsView.commentLabel.text = "Some comment"
+        
+        let todayResultsView = Bundle.main.loadNibNamed("ExerciseResultsView", owner: self, options: nil)?.first as! ExerciseResultsView
+        todayResultsView.titleLabel.text = "Today"
+        todayResultsView.commentLabel.text = "Add comment..."
+        
+        cell.resultsStackView.addSubview(lastResultsView)
+        cell.resultsStackView.addSubview(todayResultsView)
 
         return cell
     }

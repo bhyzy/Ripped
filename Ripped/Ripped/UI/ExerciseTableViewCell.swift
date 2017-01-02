@@ -12,6 +12,16 @@ class ExerciseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var resultsStackView: UIStackView!
 
-
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        nameLabel.text = nil
+        goalLabel.text = nil
+        resultsStackView.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+    }
+    
 }

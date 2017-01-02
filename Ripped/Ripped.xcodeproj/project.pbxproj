@@ -21,6 +21,8 @@
 		8C02674E1E153F44001901F7 /* CellTitleProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02674D1E153F44001901F7 /* CellTitleProviding.swift */; };
 		8C0267501E154276001901F7 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02674F1E154276001901F7 /* DayViewController.swift */; };
 		8C0267561E15486D001901F7 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267551E15486D001901F7 /* ExerciseTableViewCell.swift */; };
+		8C0267581E154E9F001901F7 /* ExerciseResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0267571E154E9F001901F7 /* ExerciseResultsView.swift */; };
+		8C02675D1E1553E3001901F7 /* ExerciseResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C02675C1E1553E3001901F7 /* ExerciseResultsView.xib */; };
 		8C2A31A21E1409BD000C109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A31A11E1409BD000C109F /* AppDelegate.swift */; };
 		8C2A31A91E1409BE000C109F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31A81E1409BE000C109F /* Assets.xcassets */; };
 		8C2A31AC1E1409BE000C109F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2A31AA1E1409BE000C109F /* LaunchScreen.storyboard */; };
@@ -60,6 +62,8 @@
 		8C02674D1E153F44001901F7 /* CellTitleProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellTitleProviding.swift; path = Protocols/CellTitleProviding.swift; sourceTree = "<group>"; };
 		8C02674F1E154276001901F7 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayViewController.swift; path = UI/DayViewController.swift; sourceTree = "<group>"; };
 		8C0267551E15486D001901F7 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseTableViewCell.swift; path = UI/ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		8C0267571E154E9F001901F7 /* ExerciseResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseResultsView.swift; path = UI/ExerciseResultsView.swift; sourceTree = "<group>"; };
+		8C02675C1E1553E3001901F7 /* ExerciseResultsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExerciseResultsView.xib; path = UI/ExerciseResultsView.xib; sourceTree = "<group>"; };
 		8C2A319E1E1409BD000C109F /* Ripped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ripped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2A31A11E1409BD000C109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C2A31A81E1409BE000C109F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		8C0267531E15480F001901F7 /* Day Screen */ = {
 			isa = PBXGroup;
 			children = (
+				8C02675E1E1553E7001901F7 /* Exercise Results View */,
 				8C02674F1E154276001901F7 /* DayViewController.swift */,
 				8C0267551E15486D001901F7 /* ExerciseTableViewCell.swift */,
 			);
@@ -159,6 +164,15 @@
 				8C02674A1E153CB4001901F7 /* WeekViewController.swift */,
 			);
 			name = "Week Screen";
+			sourceTree = "<group>";
+		};
+		8C02675E1E1553E7001901F7 /* Exercise Results View */ = {
+			isa = PBXGroup;
+			children = (
+				8C02675C1E1553E3001901F7 /* ExerciseResultsView.xib */,
+				8C0267571E154E9F001901F7 /* ExerciseResultsView.swift */,
+			);
+			name = "Exercise Results View";
 			sourceTree = "<group>";
 		};
 		8C2A31951E1409BD000C109F = {
@@ -336,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C02673F1E152896001901F7 /* Main.storyboard in Resources */,
+				8C02675D1E1553E3001901F7 /* ExerciseResultsView.xib in Resources */,
 				8C2A31AC1E1409BE000C109F /* LaunchScreen.storyboard in Resources */,
 				8C2A31A91E1409BE000C109F /* Assets.xcassets in Resources */,
 			);
@@ -369,6 +384,7 @@
 				8C0267431E152903001901F7 /* ProgramListViewController.swift in Sources */,
 				8C0267371E141198001901F7 /* Set.swift in Sources */,
 				8C0267311E141001001901F7 /* Day.swift in Sources */,
+				8C0267581E154E9F001901F7 /* ExerciseResultsView.swift in Sources */,
 				8C02672D1E140EF9001901F7 /* Program.swift in Sources */,
 				8C02674E1E153F44001901F7 /* CellTitleProviding.swift in Sources */,
 				8C0267501E154276001901F7 /* DayViewController.swift in Sources */,
