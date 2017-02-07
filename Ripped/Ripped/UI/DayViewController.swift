@@ -8,7 +8,9 @@
 
 import UIKit
 
-class DayViewController: UITableViewController {
+class DayViewController: TableViewController {
+    
+    // MARK: - Properties
     
     var day: Day!
     

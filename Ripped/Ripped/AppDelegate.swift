@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navigationController = window!.rootViewController as! UINavigationController
         let programsViewController = navigationController.topViewController as! ProgramListViewController
-        programsViewController.dataProvider = MockDataProvider()
+        programsViewController.viewModel = ProgramListViewModel(dataProvider: MockDataProvider())
         
         return true
     }

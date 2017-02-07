@@ -8,31 +8,20 @@
 
 import UIKit
 
-class ProgramViewController: UITableViewController {
+class ProgramViewController: TableViewController {
     
-    var program: Program!
+    // MARK: - Properties
     
-    // MARK: - View lifecycle
+    var viewModel: ProgramViewModel!
+
+    // MARK: - Overriden
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = program.name
+    override var tableViewModel: TableViewModel! {
+        return viewModel
     }
-
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return program.weeks.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeekCell", for: indexPath)
-
-        let week = program.weeks[indexPath.row]
-        cell.textLabel?.text = week.cellTitle
-
-        return cell
+    
+    override func reusableCellIdentifier() -> String {
+        return "WeekCell"
     }
     
     // MARK: - Navigation
@@ -40,7 +29,7 @@ class ProgramViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let weekVC = segue.destination as? WeekViewController {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                weekVC.week = program.weeks[selectedIndexPath.row]
+                weekVC.viewModel = WeekViewModel(week: viewModel.week(atRow: selectedIndexPath.row))
             }
         }
     }

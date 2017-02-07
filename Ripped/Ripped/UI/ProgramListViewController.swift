@@ -8,23 +8,20 @@
 
 import UIKit
 
-class ProgramListViewController: UITableViewController {
+class ProgramListViewController: TableViewController {
     
-    var dataProvider: DataProviding!
-
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataProvider.programs.count
+    // MARK: - Properties
+    
+    var viewModel: ProgramListViewModel!
+    
+    // MARK: - Overriden
+    
+    override var tableViewModel: TableViewModel! {
+        return viewModel
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProgramCell", for: indexPath)
-        
-        let program = dataProvider.programs[indexPath.row]
-        cell.textLabel?.text = program.cellTitle
-        
-        return cell
+    
+    override func reusableCellIdentifier() -> String {
+        return "ProgramCell"
     }
     
     // MARK: - Navigation
@@ -32,7 +29,7 @@ class ProgramListViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let programVC = segue.destination as? ProgramViewController {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                programVC.program = dataProvider.programs[selectedIndexPath.row]
+                programVC.viewModel = ProgramViewModel(program: viewModel.program(atRow: selectedIndexPath.row))
             }
         }
     }
