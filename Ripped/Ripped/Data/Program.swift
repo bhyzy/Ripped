@@ -17,6 +17,8 @@ class Program {
         self.name = name
         self.completed = completed
         self.weeks = weeks
+        
+        weeks.forEach { $0.program = self }
     }
 }
 

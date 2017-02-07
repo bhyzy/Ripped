@@ -9,6 +9,7 @@
 import Foundation
 
 class Day {
+    weak var week: Week?
     let number: Int
     let targetParts: String?
     let completionDate: Date?
@@ -19,6 +20,8 @@ class Day {
         self.targetParts = targetParts
         self.completionDate = completionDate
         self.exercises = exercises
+        
+        exercises.forEach { $0.day = self }
     }
 }
 

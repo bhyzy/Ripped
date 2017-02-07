@@ -9,6 +9,7 @@
 import Foundation
 
 class Set {
+    weak var exercise: Exercise?
     let weight: Double
     let numberOfRepetitions: Int
     

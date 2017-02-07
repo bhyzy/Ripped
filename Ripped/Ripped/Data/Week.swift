@@ -9,6 +9,7 @@
 import Foundation
 
 class Week {
+    weak var program: Program?
     let number: Int
     let completed: Bool
     let days: [Day]
@@ -17,6 +18,8 @@ class Week {
         self.number = number
         self.completed = completed
         self.days = days
+        
+        days.forEach { $0.week = self }
     }
 }
 

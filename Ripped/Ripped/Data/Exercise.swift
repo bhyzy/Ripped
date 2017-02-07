@@ -9,6 +9,7 @@
 import Foundation
 
 class Exercise {
+    weak var day: Day?
     let name: String
     let needsWarmup: Bool
     let numberOfWorkingSets: Int
@@ -21,6 +22,8 @@ class Exercise {
         self.numberOfWorkingSets = numberOfWorkingSets
         self.comment = comment
         self.sets = sets
+        
+        sets.forEach { $0.exercise = self }
     }
 }
 
