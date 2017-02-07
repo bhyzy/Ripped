@@ -165,10 +165,10 @@
 		8C0267531E15480F001901F7 /* Day Screen */ = {
 			isa = PBXGroup;
 			children = (
+				8CDCE0271E4A0590005A5D81 /* Exercise Table View Cell */,
 				8C02675E1E1553E7001901F7 /* Exercise Results View */,
 				8C02674F1E154276001901F7 /* DayViewController.swift */,
 				8CA436981E49DF6C0052816D /* DayViewModel.swift */,
-				8C0267551E15486D001901F7 /* ExerciseTableViewCell.swift */,
 			);
 			name = "Day Screen";
 			sourceTree = "<group>";
@@ -246,15 +246,31 @@
 		8C2A31CF1E140AA1000C109F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8CDCE0281E4A05A8005A5D81 /* Base */,
 				8C0267511E1547FD001901F7 /* Program List */,
 				8C0267521E154803001901F7 /* Program Details */,
 				8C0267541E154832001901F7 /* Week Screen */,
 				8C0267531E15480F001901F7 /* Day Screen */,
 				8C02673E1E152896001901F7 /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		8CDCE0271E4A0590005A5D81 /* Exercise Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8C0267551E15486D001901F7 /* ExerciseTableViewCell.swift */,
+			);
+			name = "Exercise Table View Cell";
+			sourceTree = "<group>";
+		};
+		8CDCE0281E4A05A8005A5D81 /* Base */ = {
+			isa = PBXGroup;
+			children = (
 				8CDE6B551E2BA4F3003F5672 /* TableViewController.swift */,
 				8CDE6B571E2BA53C003F5672 /* TableViewModel.swift */,
 			);
-			name = UI;
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

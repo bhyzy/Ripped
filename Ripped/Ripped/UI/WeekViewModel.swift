@@ -39,7 +39,7 @@ class WeekViewModel: TableViewModel {
         return day(atRow: row).targetParts
     }
     
-    // MARK: - Private
+    // MARK: - Internal
     
     func day(atRow row: Int) -> Day {
         return week.days[row]

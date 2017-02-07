@@ -14,6 +14,11 @@ class DayViewModel: TableViewModel {
     
     private var day: Day
     
+    // MARK: - Definitions
+    
+    typealias ExerciseCellSetup = (name: String,
+                                   goal: String)
+    
     // MARK: - Initialization
     
     init(day: Day) {
@@ -27,21 +32,20 @@ class DayViewModel: TableViewModel {
         return day.fullName
     }
     
-//    override var numberOfRows: Int {
-//        return 0
-//    }
-//    
-//    override func textForCellAtRow(row: Int) -> String? {
-//        return day(atRow: row).cellTitle
-//    }
-//    
-//    override func detailTextForCellAtRow(row: Int) -> String? {
-//        return day(atRow: row).targetParts
-//    }
+    override var numberOfRows: Int {
+        return day.exercises.count
+    }
+    
+    // MARK: - Internal
+    
+    func exerciseCellSetup(forRow row: Int) -> ExerciseCellSetup {
+        let exercise = self.exercise(atRow: row)
+        return ExerciseCellSetup(name: exercise.name, goal: exercise.goal)
+    }
     
     // MARK: - Private
     
-//    func day(atRow row: Int) -> Day {
-//        return week.days[row]
-//    }
+    private func exercise(atRow row: Int) -> Exercise {
+        return day.exercises[row]
+    }
 }

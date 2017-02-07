@@ -14,6 +14,15 @@ class DayViewController: TableViewController {
     
     var viewModel: DayViewModel!
     
+    // MARK: - View Controller Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 286
+    }
+    
     // MARK: - Overriden
     
     override var tableViewModel: TableViewModel! {
@@ -24,31 +33,25 @@ class DayViewController: TableViewController {
         return "ExerciseCell"
     }
 
-//    // MARK: - Table view data source
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return day.exercises.count
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath) as! ExerciseTableViewCell
-//
-//        let exercise = day.exercises[indexPath.row]
-//        cell.nameLabel.text = exercise.name
-//        cell.goalLabel.text = exercise.goal
-//        
-//        let lastResultsView = Bundle.main.loadNibNamed("ExerciseResultsView", owner: self, options: nil)?.first as! ExerciseResultsView
-//        lastResultsView.titleLabel.text = "Last Time"
-//        lastResultsView.commentLabel.text = "Some comment"
-//        
-//        let todayResultsView = Bundle.main.loadNibNamed("ExerciseResultsView", owner: self, options: nil)?.first as! ExerciseResultsView
-//        todayResultsView.titleLabel.text = "Today"
-//        todayResultsView.commentLabel.text = "Add comment..."
-//        
-//        cell.resultsStackView.addSubview(lastResultsView)
-//        cell.resultsStackView.addSubview(todayResultsView)
-//
-//        return cell
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier(), for: indexPath) as! ExerciseTableViewCell
+
+        let cellSetup = viewModel.exerciseCellSetup(forRow: indexPath.row)
+        cell.nameLabel.text = cellSetup.name
+        cell.goalLabel.text = cellSetup.goal
+        
+        let lastResultsView = Bundle.main.loadNibNamed("ExerciseResultsView", owner: self, options: nil)?.first as! ExerciseResultsView
+        lastResultsView.titleLabel.text = "Last Time"
+        lastResultsView.commentLabel.text = "Some comment"
+        
+        let todayResultsView = Bundle.main.loadNibNamed("ExerciseResultsView", owner: self, options: nil)?.first as! ExerciseResultsView
+        todayResultsView.titleLabel.text = "Today"
+        todayResultsView.commentLabel.text = "Add comment..."
+        
+        cell.resultsStackView.addArrangedSubview(lastResultsView)
+        cell.resultsStackView.addArrangedSubview(todayResultsView)
+
+        return cell
+    }
     
 }

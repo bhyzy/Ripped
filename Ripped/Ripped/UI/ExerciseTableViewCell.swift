@@ -9,14 +9,28 @@
 import UIKit
 
 class ExerciseTableViewCell: UITableViewCell {
+    
+    // MARK: - Properties
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var resultsStackView: UIStackView!
 
+    // MARK: - Overriden
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        clearContents()
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+        clearContents()
+    }
+    
+    // MARK: - Private
+    
+    private func clearContents() {
         nameLabel.text = nil
         goalLabel.text = nil
         resultsStackView.subviews.forEach {

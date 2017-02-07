@@ -18,8 +18,8 @@ class ExerciseResultsView: UIView {
         super.awakeFromNib()
     }
 
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIViewNoIntrinsicMetric, height: 77)
-    }
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: UIViewNoIntrinsicMetric, height: 77)
+//    }
     
 }

@@ -35,7 +35,7 @@ class ProgramViewModel: TableViewModel {
         return week(atRow: row).cellTitle
     }
     
-    // MARK: - Private
+    // MARK: - Internal
     
     func week(atRow row: Int) -> Week {
         return program.weeks[row]
