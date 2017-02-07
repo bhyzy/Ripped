@@ -34,24 +34,25 @@ class DayViewController: TableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier(), for: indexPath) as! ExerciseTableViewCell
-
         let cellSetup = viewModel.exerciseCellSetup(forRow: indexPath.row)
-        cell.nameLabel.text = cellSetup.name
-        cell.goalLabel.text = cellSetup.goal
         
-        let lastResultsView = Bundle.main.loadNibNamed("ExerciseResultsView", owner: self, options: nil)?.first as! ExerciseResultsView
-        lastResultsView.titleLabel.text = "Last Time"
-        lastResultsView.commentLabel.text = "Some comment"
+        var resultViews = [resultView(withSetup: cellSetup.todayResults)]
+        if let lastResultsSetup = cellSetup.lastResults {
+            resultViews.insert(resultView(withSetup: lastResultsSetup), at: 0)
+        }
         
-        let todayResultsView = Bundle.main.loadNibNamed("ExerciseResultsView", owner: self, options: nil)?.first as! ExerciseResultsView
-        todayResultsView.titleLabel.text = "Today"
-        todayResultsView.commentLabel.text = "Add comment..."
-        
-        cell.resultsStackView.addArrangedSubview(lastResultsView)
-        cell.resultsStackView.addArrangedSubview(todayResultsView)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier(), for: indexPath) as! ExerciseTableViewCell
+        cell.configure(withName: cellSetup.name, goal: cellSetup.goal, resultsViews: resultViews)
+    
         return cell
     }
     
+    // MARK: - Private
+    
+    private func resultView(withSetup setup: DayViewModel.ExerciseResultsViewSetup) -> ExerciseResultsView {
+        let resultsView = ExerciseResultsView.create()
+        resultsView.configure(withTitle: setup.title, results: setup.results, comment: setup.comment)
+        return resultsView
+    }
+
 }

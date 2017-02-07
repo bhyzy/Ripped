@@ -12,9 +12,9 @@ class ExerciseTableViewCell: UITableViewCell {
     
     // MARK: - Properties
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var goalLabel: UILabel!
-    @IBOutlet weak var resultsStackView: UIStackView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var goalLabel: UILabel!
+    @IBOutlet private weak var resultsStackView: UIStackView!
 
     // MARK: - Overriden
     
@@ -28,12 +28,22 @@ class ExerciseTableViewCell: UITableViewCell {
         clearContents()
     }
     
+    // MARK: - Internal
+    
+    func configure(withName name: String, goal: String, resultsViews: [ExerciseResultsView]) {
+        nameLabel.text = name
+        goalLabel.text = goal
+        resultsViews.forEach {
+            resultsStackView.addArrangedSubview($0)
+        }
+    }
+    
     // MARK: - Private
     
     private func clearContents() {
         nameLabel.text = nil
         goalLabel.text = nil
-        resultsStackView.subviews.forEach {
+        resultsStackView.arrangedSubviews.forEach {
             $0.removeFromSuperview()
         }
     }

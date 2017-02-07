@@ -16,8 +16,13 @@ class DayViewModel: TableViewModel {
     
     // MARK: - Definitions
     
+    typealias ExerciseResultsViewSetup = (title: String,
+                                          results: [String],
+                                          comment: String?)
     typealias ExerciseCellSetup = (name: String,
-                                   goal: String)
+                                   goal: String,
+                                   todayResults: ExerciseResultsViewSetup,
+                                   lastResults: ExerciseResultsViewSetup?)
     
     // MARK: - Initialization
     
@@ -40,12 +45,23 @@ class DayViewModel: TableViewModel {
     
     func exerciseCellSetup(forRow row: Int) -> ExerciseCellSetup {
         let exercise = self.exercise(atRow: row)
-        return ExerciseCellSetup(name: exercise.name, goal: exercise.goal)
+        let todayResults = ExerciseResultsViewSetup(title: NSLocalizedString("Today", comment: ""),
+                                                    results: results(forExercise: exercise),
+                                                    comment: exercise.comment)
+        // TODO: prepare last results
+        return ExerciseCellSetup(name: exercise.name,
+                                 goal: exercise.goal,
+                                 todayResults: todayResults,
+                                 lastResults: nil)
     }
     
     // MARK: - Private
     
     private func exercise(atRow row: Int) -> Exercise {
         return day.exercises[row]
+    }
+    
+    private func results(forExercise exercise: Exercise) -> [String] {
+        return exercise.sets.map { "\(Int($0.weight)) x \($0.numberOfRepetitions)" }
     }
 }
