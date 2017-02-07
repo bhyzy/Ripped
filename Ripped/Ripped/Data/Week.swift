@@ -8,10 +8,16 @@
 
 import Foundation
 
-struct Week {
+class Week {
     let number: Int
     let completed: Bool
     let days: [Day]
+    
+    init(number: Int, completed: Bool, days: [Day]) {
+        self.number = number
+        self.completed = completed
+        self.days = days
+    }
 }
 
 extension Week {

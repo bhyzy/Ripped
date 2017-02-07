@@ -8,11 +8,18 @@
 
 import Foundation
 
-struct Day {
+class Day {
     let number: Int
     let targetParts: String?
     let completionDate: Date?
     let exercises: [Exercise]
+    
+    init(number: Int, targetParts: String?, completionDate: Date?, exercises: [Exercise]) {
+        self.number = number
+        self.targetParts = targetParts
+        self.completionDate = completionDate
+        self.exercises = exercises
+    }
 }
 
 extension Day {

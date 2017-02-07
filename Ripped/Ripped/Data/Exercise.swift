@@ -8,12 +8,20 @@
 
 import Foundation
 
-struct Exercise {
+class Exercise {
     let name: String
     let needsWarmup: Bool
     let numberOfWorkingSets: Int
     let comment: String?
     let sets: [Set]
+    
+    init(name: String, needsWarmup: Bool, numberOfWorkingSets: Int, comment: String?, sets: [Set]) {
+        self.name = name
+        self.needsWarmup = needsWarmup
+        self.numberOfWorkingSets = numberOfWorkingSets
+        self.comment = comment
+        self.sets = sets
+    }
 }
 
 extension Exercise {

@@ -8,10 +8,16 @@
 
 import Foundation
 
-struct Program {
+class Program {
     let name: String
     let completed: Bool
     let weeks: [Week]
+    
+    init(name: String, completed: Bool, weeks: [Week]) {
+        self.name = name
+        self.completed = completed
+        self.weeks = weeks
+    }
 }
 
 extension Program: CellTitleProviding {

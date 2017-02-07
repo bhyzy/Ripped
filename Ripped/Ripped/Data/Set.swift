@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Set {
+class Set {
     let weight: Double
     let numberOfRepetitions: Int
+    
+    init(weight: Double, numberOfRepetitions: Int) {
+        self.weight = weight
+        self.numberOfRepetitions = numberOfRepetitions
+    }
 }
