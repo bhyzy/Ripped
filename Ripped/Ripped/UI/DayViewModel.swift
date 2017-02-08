@@ -45,14 +45,23 @@ class DayViewModel: TableViewModel {
     
     func exerciseCellSetup(forRow row: Int) -> ExerciseCellSetup {
         let exercise = self.exercise(atRow: row)
+        
         let todayResults = ExerciseResultsViewSetup(title: NSLocalizedString("Today", comment: ""),
                                                     results: results(forExercise: exercise),
                                                     comment: exercise.comment)
-        // TODO: prepare last results
+        
+        var lastResults: ExerciseResultsViewSetup?
+        if let lastExercise = exercise.previousOccurence {
+            lastResults = ExerciseResultsViewSetup(title: NSLocalizedString("Last Time", comment: ""),
+                                                   results: results(forExercise: lastExercise),
+                                                   comment: lastExercise.comment)
+
+        }
+        
         return ExerciseCellSetup(name: exercise.name,
                                  goal: exercise.goal,
                                  todayResults: todayResults,
-                                 lastResults: nil)
+                                 lastResults: lastResults)
     }
     
     // MARK: - Private

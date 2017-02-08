@@ -32,3 +32,18 @@ extension Exercise {
         return (needsWarmup ? "WA + " : "") + "\(numberOfWorkingSets)WS"
     }
 }
+
+extension Exercise {
+    var previousOccurence: Exercise? {
+        guard let day = day, let week = day.week, let program = week.program else {
+            return nil
+        }
+        
+        let previousDaysThisWeek = week.days.filter { $0.number < day.number }
+        let previousWeeksDays = program.weeks.filter { $0.number < week.number }.flatMap { $0.days }
+        let allPreviousDays = previousDaysThisWeek + previousWeeksDays
+        
+        let sameExercises = allPreviousDays.flatMap { $0.exercises }.filter { $0.name == name }
+        return sameExercises.last
+    }
+}
