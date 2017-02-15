@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Exercise {
     weak var day: Day?
@@ -46,4 +47,13 @@ extension Exercise {
         let sameExercises = allPreviousDays.flatMap { $0.exercises }.filter { $0.name == name }
         return sameExercises.last
     }
+}
+
+final class ManagedExercise: Object {
+    dynamic var day: ManagedDay?
+    dynamic var name = ""
+    dynamic var needsWarmup = false
+    dynamic var numberOfWorkingSets = 0
+    dynamic var comment: String?
+    let sets = LinkingObjects(fromType: ManagedSet.self, property: "exercise")
 }

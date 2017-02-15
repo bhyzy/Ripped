@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Program {
     let name: String
@@ -25,5 +26,16 @@ class Program {
 extension Program: CellTitleProviding {
     var cellTitle: String {
         return name + (completed ? " ✓" : "")
+    }
+}
+
+final class ManagedProgram: Object {
+    dynamic var id = ""
+    dynamic var name = ""
+    dynamic var completed = false
+    let weeks = LinkingObjects(fromType: ManagedWeek.self, property: "program")
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

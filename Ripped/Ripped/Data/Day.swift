@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Day {
     weak var week: Week?
@@ -40,3 +41,10 @@ extension Day: CellTitleProviding {
     }
 }
 
+final class ManagedDay: Object {
+    dynamic var week: ManagedWeek?
+    dynamic var number = 0
+    dynamic var targetParts: String?
+    dynamic var completionDate: Date?
+    let exercises = LinkingObjects(fromType: ManagedExercise.self, property: "day")
+}

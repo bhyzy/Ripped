@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Week {
     weak var program: Program?
@@ -33,4 +34,11 @@ extension Week: CellTitleProviding {
     var cellTitle: String {
         return name + (completed ? " ✓" : "")
     }
+}
+
+final class ManagedWeek: Object {
+    dynamic var program: ManagedProgram?
+    dynamic var number = 0
+    dynamic var completed = false
+    let days = LinkingObjects(fromType: ManagedDay.self, property: "week")
 }

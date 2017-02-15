@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Set {
     weak var exercise: Exercise?
@@ -17,4 +18,10 @@ class Set {
         self.weight = weight
         self.numberOfRepetitions = numberOfRepetitions
     }
+}
+
+final class ManagedSet: Object {
+    dynamic var exercise: ManagedExercise?
+    dynamic var weight = 0.0
+    dynamic var numberOfRepetitions = 0
 }
